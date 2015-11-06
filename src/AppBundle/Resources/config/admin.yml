@@ -1,0 +1,27 @@
+services:
+    app.admin.book_type:
+        class: AppBundle\Admin\BookTypeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Book, label: "Категорії книг"}
+        arguments:
+            - ~
+            - AppBundle\Entity\BookType
+            - ~
+
+    app.admin.book:
+         class: AppBundle\Admin\BookAdmin
+         tags:
+             - { name: sonata.admin, manager_type: orm, group: Book, label: "Книги" }
+         arguments:
+             - ~
+             - AppBundle\Entity\Book
+             - ~
+
+    app.admin.book_comment:
+        class: AppBundle\Admin\BookCommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Book, label: "Коментарі до книг" }
+        arguments:
+            - ~
+            - AppBundle\Entity\BookComment
+            - ~
