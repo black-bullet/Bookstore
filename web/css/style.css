@@ -1,0 +1,33 @@
+.list-book
+{
+    margin: 5% 5% 0 8%;
+}
+
+.book{
+    float: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.book h3{
+    margin-top: -1px;
+}
+
+.book #price{
+    font-size: 22px;
+    color: darkolivegreen;
+}
+
+.image-book
+{
+    width: 263px;
+    float: left;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 0 10px 10px 0;
+}
+
+.breadcrumb button{
+    margin-left: 10px;
+}
