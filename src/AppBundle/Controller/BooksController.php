@@ -2,19 +2,18 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class DefaultController extends Controller
+class BooksController extends BaseController
 {
-
     /**
      * @Method("GET")
-     * @Route("/index", name="index_page")
+     * @Route("/books", name="book_index")
      */
     public function indexAction()
     {
-        return $this->render('default/index.html.twig');
+        $books = $this->getRepository("AppBundle:Book")->findAll();
+        return $this->render('book/index.html.twig', ['books' => $books]);
     }
 }
