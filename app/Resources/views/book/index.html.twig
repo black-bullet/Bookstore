@@ -14,28 +14,44 @@
         <div class="row">
             <div class="col-md-10">
                 <div class="breadcrumb">
-                    Фільтр:
-                    <button class="btn btn-primary">По ціні</button>
-                    <button class="btn btn-info">По року видання</button>
-                    <button class="btn btn-success">По кількості сторінок</button>
-                    <button class="btn btn-warning">Без фільтру</button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">По спаданню</a></li>
-                        <li><a href="#">По зростанню</a></li>
-                    </ul>
+                    <p>Фільтр:</p>
+                    <form action="{{ path("book_index") }}" method="get" class="filter-form">
+                        <span class="breadcrumb-left">
+                            <select name="sort" class="form-control">
+                                <option value="price" >По ціні</option>
+                                <option value="yearEdition">По року видання</option>
+                                <option value="numberPages">По кількості сторінок</option>
+                                <option value="notFiler" selected="selected">Без фільтру</option>
+                            </select>
+                        </span>
+                        <span class="breadcrumb-right">
+                            <select name="by" class="form-control">
+                                <option value="ASC" selected="selected">По зростанню</option>
+                                <option value="DESC">По спаданню</option>
+                            </select>
+                        </span>
+                        <input type="submit" value="Фільтрувати" class="btn btn-primary" id="btn-filter">
+                    </form>
                 </div>
                 {% for book in books %}
                     <article class="book">
                         <div class="image-book">
-                            <img src="{{ asset('/images/book/'~book.id~'/'~book.image) }}" alt="{{ book.name }} image not found" class="large" height="350" width="250" />
+                            <img src="{{ asset('/images/book/'~book.id~'/'~book.image) }}"
+                                 alt="{{ book.name }} image not found" class="large" height="350" width="250"/>
                         </div>
-                            <h3>{{ book.name }}</h3>
-                            <p id="price"><strong>Ціна:</strong> {{ book.price }}</p>
-                            <p><strong>Автор:</strong> {{ book.author }}</p>
-                            <p><strong>Назва видання:</strong> {{ book.nameEdition }}</p>
-                            <p><strong>Рік видання:</strong> {{ book.yearEdition }}</p>
-                            <p><strong>Кількість сторінок:</strong> {{ book.numberPages }}</p>
-                            <p>{{ book.description }}</p>
+                        <h3>{{ book.name }}</h3>
+
+                        <p id="price"><strong>Ціна:</strong> {{ book.price }}</p>
+
+                        <p><strong>Автор:</strong> {{ book.author }}</p>
+
+                        <p><strong>Назва видання:</strong> {{ book.nameEdition }}</p>
+
+                        <p><strong>Рік видання:</strong> {{ book.yearEdition }}</p>
+
+                        <p><strong>Кількість сторінок:</strong> {{ book.numberPages }}</p>
+
+                        <p>{{ book.description }}</p>
                     </article>
                 {% endfor %}
             </div>
