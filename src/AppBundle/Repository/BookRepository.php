@@ -7,6 +7,11 @@ use AppBundle\Entity\Book;
 
 class BookRepository extends EntityRepository
 {
+    /**
+     * @param $field
+     * @param $by
+     * @return array
+     */
     public function getSort($field, $by)
     {
         return $this->createQueryBuilder('b')
