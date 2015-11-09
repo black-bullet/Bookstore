@@ -1,8 +1,6 @@
 Bookstore
-========================
 
 1) Install project
---------------
 
 2)Check your system configuration
 $ php app/check.php
