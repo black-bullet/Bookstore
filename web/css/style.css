@@ -44,3 +44,24 @@
     margin-left: 10px;
 }
 
+#fos-user-content{
+    margin:5% 0 0 5%;
+}
+
+#fos-user-content input[type="text"],input[type="password"],input[type="email"]{
+    display: block;
+    width: 40%;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#fos-user-content input[type="submit"]{
+    display: block;
+}
+
