@@ -25,7 +25,8 @@
         "sonata-project/block-bundle": "dev-master",
         "sonata-project/easy-extends-bundle": "^2.1",
         "sonata-project/user-bundle": "^2.2",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "knplabs/knp-paginator-bundle": "^2.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

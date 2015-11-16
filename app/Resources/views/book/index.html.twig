@@ -10,15 +10,16 @@
 
 
 {% block content %}
-    <div class="list-book">
+    <div class="indent">
         <div class="row">
             <div class="col-md-10">
                 <div class="breadcrumb">
                     <p>Фільтр:</p>
+
                     <form action="{{ path("book_index") }}" method="get" class="filter-form">
                         <span class="breadcrumb-left">
                             <select name="sort" class="form-control">
-                                <option value="price" >По ціні</option>
+                                <option value="price">По ціні</option>
                                 <option value="yearEdition">По року видання</option>
                                 <option value="numberPages">По кількості сторінок</option>
                                 <option value="notFiler" selected="selected">Без фільтру</option>
@@ -33,13 +34,14 @@
                         <input type="submit" value="Фільтрувати" class="btn btn-primary" id="btn-filter">
                     </form>
                 </div>
-                {% for book in books %}
+                {% for book in pagination %}
                     <article class="book">
                         <div class="image-book">
                             <img src="{{ asset('/images/book/'~book.id~'/'~book.image) }}"
                                  alt="{{ book.name }} image not found" class="large" height="350" width="250"/>
                         </div>
-                        <h3>{{ book.name }}</h3>
+                        <h3><a id="book_detail" href="{{ path('book_detail', { 'id': book.id }) }}">{{ book.name }}</a>
+                        </h3>
 
                         <p id="price"><strong>Ціна:</strong> {{ book.price }}</p>
 
@@ -51,9 +53,16 @@
 
                         <p><strong>Кількість сторінок:</strong> {{ book.numberPages }}</p>
 
-                        <p>{{ book.description }}</p>
+                        <p>{{ book.description(1000) }}</p>
+                        <button type="button" id="btn-more" class="btn btn-success">
+                            <a id="book_detail_link" href="{{ path('book_detail', { 'id': book.id }) }}">
+                                Детальніше</a>
+                        </button>
                     </article>
                 {% endfor %}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
             </div>
         </div>
     </div>
