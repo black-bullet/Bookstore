@@ -17,11 +17,19 @@ class BooksController extends BaseController
         $sort = $this->getRequest()->get("sort");
         $by = $this->getRequest()->get("by");
         $books = null;
-        if ($sort != null && $by != null && $sort!="notFiler") {
+        if ($sort != null && $by != null && $sort != "notFiler") {
             $books = $this->getRepository("AppBundle:Book")->getSort($sort, $by);
         } else {
             $books = $this->getRepository("AppBundle:Book")->findAll();
         }
-        return $this->render('book/index.html.twig', ['books' => $books]);
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $books,
+            $this->getRequest()->query->get('page', 1),
+            5
+        );
+
+        return $this->render('book/index.html.twig', ['books' => $books, 'pagination' => $pagination]);
     }
 }

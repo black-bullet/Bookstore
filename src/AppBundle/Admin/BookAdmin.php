@@ -44,10 +44,12 @@ class BookAdmin extends Admin
             ->add('numberPages', null, ['label' => 'Кількість сторінок'])
             ->add('price', null, ['label' => 'Ціна'])
             ->add('bookType', 'entity', ['class' => 'AppBundle\Entity\BookType', 'label' => 'Категорія книги'])
-            ->add('image', 'file', [
-                'required' => false,
-                'label' => 'Зображення'
-            ])
+            ->add('image')
+            //TODO load image
+//            ->add('image', 'file', [
+//                'required' => false,
+//                'label' => 'Зображення'
+//            ])
             ->end();
     }
 
