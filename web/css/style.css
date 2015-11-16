@@ -1,4 +1,4 @@
-.list-book {
+.indent {
     margin: 5% 5% 0 8%;
 }
 
@@ -13,7 +13,7 @@
     margin-top: -1px;
 }
 
-.book #price {
+#price {
     font-size: 22px;
     color: darkolivegreen;
 }
@@ -64,4 +64,44 @@
 #fos-user-content input[type="submit"]{
     display: block;
 }
+
+#myCarousel{
+    width: 400px;
+    float: left;
+    margin: 25px 15px 5px 0;
+}
+
+.book-detail h3{
+    color: darkslategrey;
+    font-size: 28px;
+}
+
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.book-detail-image {
+    float: left;
+    width: 275px;
+}
+
+#btn-buy{
+    margin-bottom: 10px;
+}
+
+#book_detail{
+    text-decoration: none;
+}
+
+#book_detail_link{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#btn-more{
+    float: right;
+    margin-top: 10px;
+}
+
 

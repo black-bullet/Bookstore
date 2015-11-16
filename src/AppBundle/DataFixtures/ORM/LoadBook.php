@@ -54,6 +54,7 @@ class LoadBook extends AbstractFixture implements OrderedFixtureInterface
         $book4->setYearEdition(2012);
         $book4->setPrice(510);
         $book4->setImage("book.jpg");
+        $book4->setSlider(true);
         $book4->setBookType($this->getReference("bookType-1"));
 
         $book5 = new Book();

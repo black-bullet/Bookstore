@@ -122,6 +122,13 @@ class Book
     private $updatedAt;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean", options={"default"="0"})
+     */
+    private $slider = false;
+
+    /**
      * @ORM\PreFlush()
      */
     public function preFlush()
@@ -454,5 +461,29 @@ class Book
     public function __toString()
     {
         return $this->getName()?: 'New Book';
+    }
+
+    /**
+     * Set slider
+     *
+     * @param boolean $slider
+     *
+     * @return Book
+     */
+    public function setSlider($slider)
+    {
+        $this->slider = $slider;
+
+        return $this;
+    }
+
+    /**
+     * Get slider
+     *
+     * @return boolean
+     */
+    public function getSlider()
+    {
+        return $this->slider;
     }
 }

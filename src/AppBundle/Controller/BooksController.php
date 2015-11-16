@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Book;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,5 +32,14 @@ class BooksController extends BaseController
         );
 
         return $this->render('book/index.html.twig', ['books' => $books, 'pagination' => $pagination]);
+    }
+
+    /**
+     * @Method("GET")
+     * @Route("books/{id}", name="book_detail")
+     */
+    public function bookDetailAction(Book $book)
+    {
+        return $this->render('book/detail.html.twig', ['book'=>$book]);
     }
 }
