@@ -192,9 +192,13 @@ class Book
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription($length = null)
     {
-        return $this->description;
+        if ($length > 0) {
+            $pos = strripos($this->description, '.', $length - 10);
+            return substr($this->description, 0, $pos == 0 ? $length : $pos+1);
+        } else
+            return $this->description;
     }
 
     /**
@@ -460,7 +464,7 @@ class Book
      */
     public function __toString()
     {
-        return $this->getName()?: 'New Book';
+        return $this->getName() ?: 'New Book';
     }
 
     /**

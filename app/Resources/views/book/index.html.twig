@@ -53,7 +53,7 @@
 
                         <p><strong>Кількість сторінок:</strong> {{ book.numberPages }}</p>
 
-                        <p>{{ book.description }}</p>
+                        <p>{{ book.description(1000) }}</p>
                         <button type="button" id="btn-more" class="btn btn-success">
                             <a id="book_detail_link" href="{{ path('book_detail', { 'id': book.id }) }}">
                                 Детальніше</a>
