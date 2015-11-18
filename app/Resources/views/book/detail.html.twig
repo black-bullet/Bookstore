@@ -12,6 +12,7 @@
     <div class="indent">
     <div class="row">
         <div class="col-md-10">
+
             {% if book.slider %}
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -53,6 +54,7 @@
                 <h3>{{ book.name }}</h3>
 
                 <p id="price"><strong>Ціна:</strong> {{ book.price }}</p>
+
                 <p><strong>Автор:</strong> {{ book.author }}</p>
 
                 <p><strong>Назва видання:</strong> {{ book.nameEdition }}</p>
@@ -63,6 +65,17 @@
                 <button type="button" id="btn-buy" class="btn btn-info active">Купити</button>
                 <p>{{ book.description }}</p>
             </div>
+            <section class="comments">
+                <section class="previous-comments">
+                    <h3 id="previous-comments-header">Коментарі</h3>
+                    {% include 'comment/index.html.twig' with {'comments':comments} %}
+                </section>
+                <div class="add-comments">
+                    <h3>Додати коментар</h3>
+                    {{ render(controller('AppBundle:BookComments:new', {'bookId':book.id } )) }}
+                </div>
+
+            </section>
         </div>
     </div>
 {% endblock %}

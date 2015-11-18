@@ -7,7 +7,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% block stylesheets %}
             {#<link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />#}
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
             <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
         {% endblock stylesheets %}
     </head>
@@ -34,6 +34,7 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="">Про нас</a></li>
                                     <li><a href="">Контакти</a></li>
+                                    <li><a href="{{ path("contact") }}">Зворотній зв'язок</a></li>
                                 </ul>
                             </div>
                         </div>

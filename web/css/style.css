@@ -35,8 +35,7 @@
     width: 200px;
 }
 
-
-#btn-filter{
+#btn-filter {
     margin-bottom: 3px;
 }
 
@@ -44,11 +43,11 @@
     margin-left: 10px;
 }
 
-#fos-user-content{
-    margin:5% 0 0 5%;
+#fos-user-content {
+    margin: 5% 0 0 5%;
 }
 
-#fos-user-content input[type="text"],input[type="password"],input[type="email"]{
+#fos-user-content input[type="text"], input[type="password"], input[type="email"] {
     display: block;
     width: 40%;
     height: 30px;
@@ -61,21 +60,20 @@
     border-radius: 8px;
 }
 
-#fos-user-content input[type="submit"]{
+#fos-user-content input[type="submit"] {
     display: block;
 }
 
-#myCarousel{
+#myCarousel {
     width: 400px;
     float: left;
     margin: 25px 15px 5px 0;
 }
 
-.book-detail h3{
+.book-detail h3 {
     color: darkslategrey;
     font-size: 28px;
 }
-
 
 .carousel-inner > .item > img {
     margin: 0 auto;
@@ -86,22 +84,76 @@
     width: 275px;
 }
 
-#btn-buy{
+#btn-buy {
     margin-bottom: 10px;
 }
 
-#book_detail{
+#book_detail {
     text-decoration: none;
 }
 
-#book_detail_link{
+#book_detail_link {
     text-decoration: none;
     color: whitesmoke;
 }
 
-#btn-more{
+#btn-more {
     float: right;
     margin-top: 10px;
 }
 
+.comments {
+    border-top: 1px solid #1b6d85;
+    padding: 0px;
+}
+
+.book-comment {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#book-comment-name {
+    font-size: 20px;
+    color: #001f3f;
+}
+
+#book-comment-date {
+    font-style: oblique;
+}
+
+#previous-comments-header {
+    margin-bottom: 15px;
+}
+
+.add-comments{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.add-comments input[type='text']{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.add-comments textarea{
+    display: block;
+    width:100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
 

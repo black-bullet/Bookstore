@@ -79,6 +79,12 @@ class LoadBook extends AbstractFixture implements OrderedFixtureInterface
         $book6->setImage("book.jpg");
         $book6->setBookType($this->getReference("bookType-1"));
 
+        $this->addReference('book-1', $book1);
+        $this->addReference('book-2', $book2);
+        $this->addReference('book-3', $book3);
+        $this->addReference('book-4', $book4);
+        $this->addReference('book-5', $book5);
+        $this->addReference('book-6', $book6);
 
         $manager->persist($book1);
         $manager->persist($book2);

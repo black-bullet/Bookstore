@@ -1,0 +1,12 @@
+{% for comment in comments %}
+    <div class="book-comment">
+        <div>
+            <p><span id="book-comment-name">{{ comment.name }}</span> написав(-ла) в
+                <time id="book-comment-date" datetime="{{ comment.updatedAt|date('c') }}">{{ comment.createdAt|date('l, F j, Y') }}</time>
+            </p>
+        </div>
+        <p>{{ comment.comment }}</p>
+    </div>
+{% else %}
+    <p>Коментарів немає.</p>
+{% endfor %}

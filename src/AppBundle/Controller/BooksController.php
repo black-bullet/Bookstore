@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Book;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
 
 class BooksController extends BaseController
 {
@@ -38,8 +37,12 @@ class BooksController extends BaseController
      * @Method("GET")
      * @Route("books/{id}", name="book_detail")
      */
-    public function bookDetailAction(Book $book)
+    public function getAction(Book $book)
     {
-        return $this->render('book/detail.html.twig', ['book'=>$book]);
+        $comments = $this->getRepository("AppBundle:BookComment")->getCommentsForBook($book->getId());
+        return $this->render('book/detail.html.twig', [
+            'book' => $book,
+            'comments' => $comments
+        ]);
     }
 }

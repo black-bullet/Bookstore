@@ -1,0 +1,6 @@
+<form action="{{ path('book_comment_create', {'book':comment.book.id}) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Відправити">
+    </p>
+</form>
