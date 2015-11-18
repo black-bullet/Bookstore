@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock stylesheets %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock javascripts %}
+
+{% block content %}
+    <div class="indent">
+        <div class="row">
+            <div class="col-md-10">
+                <header>
+                    <h1>Форма зворотнього зв`язку</h1>
+                </header>
+
+                <p style="margin-left:3%;">Що вас цікавить?</p>
+
+                <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}">
+
+                    {{ form_errors(form) }}
+
+                    <div class="col-sm-10">
+                        {{ form_row(form.name, { 'attr': {'class': 'form-control' }, 'label_attr':{'class':'control-label col-sm-2'} }) }}
+                    </div>
+                    <div class="col-sm-10">
+                        {{ form_row(form.phone, { 'attr': {'class': 'form-control'}, 'label_attr':{'class':'control-label col-sm-2'} }) }}
+                    </div>
+                    <div class="col-sm-10">
+                        {{ form_row(form.topic, { 'attr': {'class': 'form-control'}, 'label_attr':{'class':'control-label col-sm-2'} }) }}
+                    </div>
+                    <div class="col-sm-10">
+                        {{ form_row(form.message, { 'attr': {'class': 'form-control', 'rows':5,'cols':22}, 'label_attr':{'class':'control-label col-sm-2'} }) }}
+                    </div>
+                    <input type="submit" value="Надіслати" style="margin-left: 15%;"/>
+                    {{ form_rest(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
