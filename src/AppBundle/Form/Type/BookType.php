@@ -16,7 +16,7 @@ class Book extends AbstractType
     {
         $builder
             ->add('name', 'text')
-            ->add('description', 'area')
+            ->add('description', 'textarea')
             ->add('author', 'text')
             ->add('nameEdition', 'text')
             ->add('yearEdition', 'text')
@@ -25,7 +25,7 @@ class Book extends AbstractType
             ->add('bookType', null, ['property' => 'id']);
 
 
-            //->add('image')
+        //->add('image')
     }
 
     /**

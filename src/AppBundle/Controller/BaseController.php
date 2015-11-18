@@ -14,4 +14,9 @@ class BaseController extends Controller
     {
         return $this->getDoctrine()->getManager()->getRepository($className);
     }
+
+    public function getManager()
+    {
+        return $this->getDoctrine()->getEntityManager();
+    }
 }

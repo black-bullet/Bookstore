@@ -20,13 +20,14 @@ class LoadBookType extends AbstractFixture implements OrderedFixtureInterface
         $bookType3=new BookType();
         $bookType3->setName("Медецина");
 
+        $this->addReference('bookType-1', $bookType1);
+        $this->addReference('bookType-2', $bookType2);
+        $this->addReference('bookType-3', $bookType3);
+
         $manager->persist($bookType1);
         $manager->persist($bookType2);
         $manager->persist($bookType3);
 
-        $this->addReference('bookType-1', $bookType1);
-        $this->addReference('bookType-2', $bookType2);
-        $this->addReference('bookType-3', $bookType3);
         $manager->flush();
     }
 

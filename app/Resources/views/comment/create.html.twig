@@ -1,0 +1,4 @@
+{% block body %}
+    <h3>Додати коментар "{{ comment.book.name }}"</h3>
+    {% include 'AppBundle:Comment:form.html.twig' with {'form':form} %}
+{% endblock %}

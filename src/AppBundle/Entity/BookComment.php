@@ -8,6 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  * @ORM\Table(name="book_comments")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BookCommentRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class BookComment
